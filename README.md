@@ -1,6 +1,8 @@
 # README
 
-This is an explanation file of how to train and test CT for source free domain adaptation tasks.
+This is an explanation file of how to train and test CT(Compositional Transfer) for source free domain adaptation tasks in 
+
+**<u>Learning Compositional Transferability of Time Series for Source-Free Domain Adaptation</u>**.
 
 ## Document structure
 
@@ -50,7 +52,7 @@ root
 The structure of our file is below. Here is the explaination:
 
 - The model and the executable files are saved in the top-level directory, named **<u>model.py</u>** and **<u>run.py</u>**, respectively.
-- **datasets: ** The **<u>datasets</u>** folder contains subfolders for the datasets, with each dataset folder storing the corresponding **.pt** format time series data, named in the format train/test[X], where X is the domain number.
+- The **<u>datasets</u>** folder contains subfolders for the datasets, with each dataset folder storing the corresponding **.pt** format time series data, named in the format train/test[X], where X is the domain number.
 - The **<u>data_provider</u>** folder contains the code for loading the datasets and performing the corresponding preprocessing.
 - The <u>**exp**</u> folder contains the code for three training stages and one TTA stage, with the filenames **<u>trainer_stage[X].py</u>** and **<u>trainer_tta.py</u>**, respectively.
 - The **<u>run</u>** folder contains two subfolders, **<u>train</u>** and **<u>tta</u>**, which store the corresponding cross-domain training and TTA execution commands for each dataset. The command format is **<u>[X]to[X].sh</u>**. Additionally, we have placed a **<u>total.sh</u>** file in each dataset folder within the trainer, which can be run to complete all three stages of cross-domain training for that dataset at once.
@@ -137,7 +139,7 @@ python -u run.py \
 
 We have also included a test command in each training bash file, allowing you to quickly obtain the test results immediately after training.
 
-In addition, if you want to obtain the results after test time adaptation, you need to set the stage parameter in the test command to 'tta', and then add the following three parameters:
+In addition, if you want to obtain the results after instance-wise adaptation, you need to set the stage parameter in the test command to 'tta', and then add the following three parameters:
 
 ```bash
 python -u run.py \

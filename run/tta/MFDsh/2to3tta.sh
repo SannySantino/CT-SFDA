@@ -1,0 +1,29 @@
+python -u run.py \
+  --task_name classification \
+  --is_training 0 \
+  --root_path ./FD/ \
+  --model_id 2to3 \
+  --model SFDA \
+  --data FDA \
+  --des 'Exp' \
+  --itr 1 \
+  --learning_rate 0.005 \
+  --batch_size 32 \
+  --input_channels 10\
+  --kernel_size 3\
+  --stride 1\
+  --num_classes 3\
+  --mid_channels 64\
+  --final_out_channels 128\
+  --features_len 16\
+  --padding_length 1000\
+  --win_size 5120\
+  --win_step 5120\
+  --train_domain train_3.pt\
+  --test_domain test_3.pt\
+  --stage 'tta'\
+  --train_epochs 8 \
+  --patience 20 \
+  --tta 1 \
+  --delta 0.001 \
+  --N 8

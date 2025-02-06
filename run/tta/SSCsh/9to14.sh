@@ -1,0 +1,26 @@
+python -u run.py \
+  --task_name classification \
+  --is_training 0 \
+  --root_path ./SSC/ \
+  --model_id 9to14 \
+  --model SFDA \
+  --data SSC \
+  --batch_size 32 \
+  --des 'Exp' \
+  --itr 1 \
+  --learning_rate 0.002 \
+  --input_channels 10\
+  --kernel_size 3\
+  --stride 1\
+  --num_classes 5\
+  --train_domain train_14.pt\
+  --test_domain test_14.pt\
+  --stage 'tta'\
+  --train_epochs 8 \
+  --patience 20 \
+  --win_size 3072\
+  --win_step 3072\
+  --tta 1\
+  --delta 0.002 \
+  --N 6
+
